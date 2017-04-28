@@ -7,12 +7,12 @@ Provides a docker environment for playing with window functions in PostgreSQL, a
 ## Start the Postgres instance
 
 ```
-$ docker build -t window-functions-example .
-$ docker run --name window-functions-example -e POSTGRES_PASSWORD=mysecretpassword -d window-functions-example
+$ docker build -t uswitch-window-functions .
+$ docker run --name postgres-example -e POSTGRES_PASSWORD=password -d uswitch-window-functions
 ```
 
 ## Connect to it via PSQL
 
 ```
-$ docker run -it --rm --link window-functions-example:postgres window-functions-example psql -h postgres -U postgres
+$ docker run -it --rm --link postgres-example:postgres uswitch-window-functions psql -h postgres -U postgres
 ```
